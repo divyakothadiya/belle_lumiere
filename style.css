@@ -15,46 +15,140 @@
   }
   
   /* Header Styles */
-  .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: transparent; /* Transparent initially */
-    z-index: 100;
-    padding: 1rem 2rem;
-    transition: background-color 0.5s ease, box-shadow 0.5s ease;
-  }
   
   .header.scrolled {
     background-color: rgba(0, 0, 0, 0.75); /* Dark with slight transparency when scrolled */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for better distinction */
   }
-  
-  .nav-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+  .header {
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    background-color: black;
   }
   
-  .nav-links {
-    display: flex;
+  .header ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
+    overflow: hidden;
   }
   
-  .nav-links li {
-    padding-left: 3rem;
-    font-size: 1.2rem;
-  }
-  
-  .nav-links a {
-    color: white;
+  .header li a {
+    display: block;
+    padding: 20px 20px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    color: white
   }
   
-  .nav-links a:hover {
-    color: #f3a683;
+  .header li a:hover,
+  .header .menu-btn:hover {
+    /* background-color: #f4f4f4; */
   }
+  
+  .header #logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  
+  /* menu */
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  /* 48em = 768px */
+  
+  @media (min-width: 48em) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 20px 30px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
+  
   
   #logo {
     font-family: "Lobster", cursive;
@@ -82,9 +176,9 @@
   
   /* About Us Section */
   .about-us {
-    padding: 4rem 2rem;
+    padding: 0rem 2rem;
     background-color: #fff;
-    margin-top: 60px; /* Adjusted for fixed header */
+    margin-top: 2rem;  /*  Adjusted for fixed header */
   }
   
   .about-container {
@@ -129,13 +223,9 @@
   
   .image-container {
     display: flex;
-    gap: 10px;
   }
   
   .image-container img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
     border-radius: 10px;
   }
   
@@ -167,6 +257,19 @@
     color: rgb(233, 233, 233);
     font-family: "Heebo", sans-serif;
     font-size: 3rem;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .intro-text {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .intro-text {
+      font-size: 1rem;
+    }
   }
   
   .hide {
@@ -203,19 +306,12 @@
     margin-bottom: 2rem;
   }
   
-  .product-grid {
-    display: flex;
-    justify-content: space-between; /* Space between each product */
-    gap: 2rem; /* Add some spacing between items */
-    flex-wrap: wrap; /* Ensure products wrap on smaller screens */
-    margin-bottom: 4rem;
-  }
-  
   .product-item {
-    width: 30%; /* Width of each product */
+    /* width: 30%; Width of each product */
     background-color: #fff;
     text-align: center;
-    padding: 3.5rem;
+    /* padding: 3.5rem; */
+    gap: 1rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
@@ -228,7 +324,7 @@
   
   .product-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 10px;
     margin-bottom: 1rem;
     object-fit: cover;
@@ -236,25 +332,30 @@
   
   .product-item h3 {
     font-size: 1.5rem;
-    margin: 1rem 0;
+    padding: 5px;
     color: #333;
   }
   
   .product-item p {
     font-size: 1rem;
     color: #666;
+    padding: 5px;
     line-height: 1.6;
   }
   
   /* Responsive Design for smaller screens */
   @media (max-width: 768px) {
-    .product-grid {
+    /* .product-grid {
       flex-direction: column; /* Stack products vertically on smaller screens */
-    }
+    /* } */ */
   
     .product-item {
-      width: 100%; /* Full width for smaller screens */
+      width: 50%; /* Full width for smaller screens */
       margin-bottom: 2rem; /* Add spacing between stacked items */
+    }
+
+    .product-grid{
+      gap: 10px;
     }
   }
   /* Landing Section */
@@ -420,7 +521,7 @@
   
   .contact-image img {
     width: 80%;
-    height: auto;
+    height: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -450,3 +551,113 @@
     align-items: center;
     color: white;
   }
+
+
+.img-container{
+  height: 350px;
+  overflow: hidden;
+}
+
+/* Grid Container */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row by default */
+  gap: 40px;
+}
+
+/* Individual Card Styles */
+.product-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 850px) { /* Medium screens */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 480px) { /* Small screens */
+  .product-grid {
+    grid-template-columns: 1fr; /* 1 card per row */
+  }
+}
+
+.typewriter {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  /* border-right: .15em solid orange; */
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Adjust as needed */
+  animation:
+      typing 5s steps(40, end);
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* @media (max-width: 768px) {
+  .typewriter img {
+    height: 50px;
+  }
+}
+
+@media (min-width: 768px ) and (max-width: 900px) {
+  .typewriter img {
+    height: 70px;
+  }
+} */
+
+
+.typewriter img{
+  /* width: 100%; */
+}
+
+/* The typing effect */
+@keyframes typing {
+  0% {
+      width: 0
+  }
+  50% {
+      width: 50%
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+.image-container{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.mask{
+  position: absolute;
+  animation: my 5s ease;
+  animation-fill-mode: forwards;
+  width: 100%;
+  height: 300px;
+  background-color: black;
+}
+
+img{
+  width: 100%;
+}
+
+@keyframes my {
+  from{
+      left: 0%;
+  }
+  to{
+      left: 100%;
+  }
+}
