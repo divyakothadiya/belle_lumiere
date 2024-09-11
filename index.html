@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <title>Belle Lumiere - About Us</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav-bar">
+        <h1 id="logo">Belle Lumiere</h1>
+        <ul class="nav-links">
+          <li><a href="#about-us">About</a></li>
+          <li><a href="#products">product</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- <section class="landing">
+        <h2 class="big-text">Belle Lumiere</h2>
+      </section> -->
+      <!-- <section class="landing">
+        <div class="video-container">
+          <video autoplay muted loop playsinline class="landing-video">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <h2 class="big-text">Belle Lumiere</h2>
+        </div>
+      </section> -->
+      <section class="landing">
+        <div class="video-container">
+          <iframe
+            class="landing-video"
+            src="https://www.youtube.com/embed/RRv5udKGG68?autoplay=1&mute=1&loop=1&playlist=RRv5udKGG68"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          ></iframe>
+          <!-- <h2 class="big-text">Belle Lumiere</h2> -->
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section id="about-us" class="about-us">
+        <div class="about-container">
+          <!-- About Us Text Content -->
+          <div class="about-content">
+            <h2>About Us</h2>
+            <p>
+              At <strong>Belle Lumiere</strong>, we believe in the power of light to transform and illuminate every corner of life.
+              Our passion lies in creating stunning lighting experiences that inspire and bring beauty into the world.
+            </p>
+            <p>
+              Established in 2023, we are dedicated to offering innovative lighting solutions with a focus on design, quality,
+              and sustainability. Whether it’s for homes, businesses, or public spaces, we strive to light up your life with elegance and purpose.
+            </p>
+            <p>
+              Join us as we continue to explore the art and science of light, and bring moments of brilliance into everyday life.
+            </p>
+          </div>
+
+          <!-- Scrolling Images on the Right -->
+          <!-- <div class="scrolling-images">
+            <div class="image-container">
+              <img src="/Users/divyapatel/Desktop/belle_lumiere/belle_lumiere/image/IMG_8067.JPG" alt="Lighting 1" />
+              <img src="/Users/divyapatel/Desktop/belle_lumiere/belle_lumiere/image/IMG_8799.JPG" alt="Lighting 2" />
+              <img src="/Users/divyapatel/Desktop/belle_lumiere/belle_lumiere/image/IMG_8802.PNG" alt="Lighting 3" />
+              <img src="/Users/divyapatel/Desktop/belle_lumiere/belle_lumiere/image/IMG_8804.PNG" alt="Lighting 4" />
+              <img src="/Users/divyapatel/Desktop/belle_lumiere/belle_lumiere/image/IMG_8806.JPG" alt="Lighting 5" />
+            </div>
+          </div> -->
+        </div>
+      </section>
+      <!-- Products Section -->
+      <section id="products" class="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+          <div class="product-item">
+            <img src="/Users/divyapatel/Desktop/belle_lumiere/belle_lumiere/image/IMG_8067.JPG" alt="Product 1" />
+            <h3>Elegant Lamp</h3>
+            <p>Beautifully crafted lamp with a modern design.</p>
+          </div>
+          <div class="product-item">
+            <img src="/Users/divyapatel/Desktop/belle_lumiere/belle_lumiere/image/IMG_8806.JPG" alt="Product 2" />
+            <h3>Chic Chandelier</h3>
+            <p>Gorgeous chandelier perfect for your living space.</p>
+          </div>
+          <div class="product-item">
+            <img src="/Users/divyapatel/Desktop/belle_lumiere/belle_lumiere/image/IMG_8066.JPG" alt="Product 3" />
+            <h3>Classic Lantern</h3>
+            <p>A timeless design that adds warmth to any setting.</p>
+          </div>
+        </div>
+        <div class="product-grid">
+            <div class="product-item">
+              <img src="/Users/divyapatel/Desktop/belle_lumiere/belle_lumiere/image/IMG_8067.JPG" alt="Product 1" />
+              <h3>Elegant Lamp</h3>
+              <p>Beautifully crafted lamp with a modern design.</p>
+            </div>
+            <div class="product-item">
+              <img src="/Users/divyapatel/Desktop/belle_lumiere/belle_lumiere/image/IMG_8806.JPG" alt="Product 2" />
+              <h3>Chic Chandelier</h3>
+              <p>Gorgeous chandelier perfect for your living space.</p>
+            </div>
+            <div class="product-item">
+              <img src="/Users/divyapatel/Desktop/belle_lumiere/belle_lumiere/image/IMG_8802.PNG" alt="Product 3" />
+              <h3>Classic Lantern</h3>
+              <p>A timeless design that adds warmth to any setting.</p>
+            </div>
+          </div>
+      </section>
+      <section class="coming-soon">
+        <h2 class="big-text">Fashion Coming Soon</h2>
+      </section>
+      <!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="contact-container">
+      <div class="contact-content">
+        <h2>Contact Us</h2>
+        <form action="#" method="post" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    
+      <!-- Contact Image on the Right -->
+      <div class="contact-image">
+        <img src="image/IMG_8736.JPG" alt="Contact Image" />
+      </div>
+    </div>
+  </section>
+  
+  
+    </main>
+
+    <!-- Intro and Animation -->
+    <div class="intro">
+      <div class="intro-text">
+        <h1 class="hide">
+          <span class="text">Coming Soon ...</span>
+        </h1>
+        <h1 class="hide">
+          <span class="text">Belle Lumiere</span>
+        </h1>
+      </div>
+    </div>
+    <div class="slider"></div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Belle Lumiere | All Rights Reserved</p>
+    </footer>
+
+    <!-- GSAP Animation Script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
