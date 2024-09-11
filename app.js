@@ -31,9 +31,9 @@ function updateVideoSource() {
   const width = window.innerWidth;
 
   if (width <= 768) {
-    source.src = 'abc2.mp4';
+    source.src = 'mobile_vd.mp4';
   } else {
-    source.src = 'abc.mp4';
+    source.src = 'laptop_vd.mp4';
   }
 
   video.load(); // Reload the video with the new source
