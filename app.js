@@ -33,7 +33,7 @@ function updateVideoSource() {
   if (width <= 768) {
     source.src = 'mobile_vd.mp4';
   } else {
-    source.src = 'laptop_vd.mp4';
+    source.src = 'fullscreen_video.mp4';
   }
 
   video.load(); // Reload the video with the new source
