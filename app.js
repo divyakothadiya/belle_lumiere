@@ -41,3 +41,35 @@ function updateVideoSource() {
 
 window.addEventListener('resize', updateVideoSource);
 window.addEventListener('load', updateVideoSource);
+
+
+document.querySelector('.contact-form').addEventListener('submit', function(event) {
+  event.preventDefault(); 
+
+  // Get form values 
+  var name = document.getElementById('name').value; 
+  var email = document.getElementById('email').value; 
+  var message = document.getElementById('message').value;
+
+  // Send email using emailjs
+  emailjs.send('service_3akpmbv', 'template_v967f8w', { 
+    name: name, 
+    email: email, 
+    message: message 
+  }, 'Us9MpQC8NAA63vWm4')
+  .then(function() {
+    console.log('Email successfully sent!');
+    
+    // Reset the form after successful submission
+    document.querySelector('.contact-form').reset();
+
+    // Optional: You can also show a success message to the user
+    alert('Thank you for your message. We will get back to you shortly!');
+  })
+  .catch(function(error) {
+    console.error('Error sending email:', error);
+    
+    // Optional: Display an error message to the user
+    alert('There was an issue sending your message. Please try again.');
+  });
+});
